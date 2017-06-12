@@ -1,0 +1,57 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="PropertyNumbers.DepreciationPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="1" Margin="12,4,0,718" Grid.RowSpan="2"/>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="2" Margin="12,2,12,-4">
+        	<Image HorizontalAlignment="Left" Height="750" Margin="10,10,0,0" VerticalAlignment="Top" Width="446" Source="iphone-bg-1a.png"/>
+        	<TextBlock Style="{StaticResource PhoneTextNormalStyle}" Margin="12,18,0,701" Foreground="#FF080808">
+        		<Run Text="Property Numbers"/>
+        		<Run Text=" - Depreciation "/>
+        	</TextBlock>
+            <Button HorizontalAlignment="Left" Margin="165,620,0,0" VerticalAlignment="Top" Foreground="#FF0F0202" BorderBrush="{StaticResource TransparentBrush}" Click="Button_Click_1">
+        		<Image Height="44" Source="CalcButton-1b.png" Stretch="Fill" Width="84"/>
+        	</Button>
+        	<TextBlock HorizontalAlignment="Left" Margin="48,296,0,0" TextWrapping="Wrap" Text="Amount" VerticalAlignment="Top" Foreground="#FF080808"/>
+        	<TextBox x:Name="AmountTextBox" HorizontalAlignment="Left" Height="72" Margin="150,271,0,0" TextWrapping="Wrap" Text="200000" VerticalAlignment="Top" Width="239" BorderBrush="#FF080808" InputScope="Number">
+        		<TextBox.Background>
+        			<SolidColorBrush Color="{StaticResource backgroundGreys}"/>
+        		</TextBox.Background>
+        	</TextBox>
+        	<Slider x:Name="YearsSlider" HorizontalAlignment="Left" Margin="116,369,0,0" VerticalAlignment="Top" Width="239" Maximum="20" Value="10" SmallChange="1" ValueChanged="YearsSlider_ValueChanged"/>
+        	<TextBlock HorizontalAlignment="Left" Margin="48,384,0,0" TextWrapping="Wrap" Text="Years" VerticalAlignment="Top" Foreground="#FF080808"/>
+        	<RadioButton x:Name="DeminishingValueRadioButton" Content="Diminishing Value" HorizontalAlignment="Left" Margin="48,105,0,0" VerticalAlignment="Top" BorderBrush="#FF080808" Foreground="#FF080808" IsChecked="True"/>
+        	<RadioButton x:Name="PrimeCostRadioButton" Content="Prime Cost" HorizontalAlignment="Left" Margin="48,167,0,0" VerticalAlignment="Top" BorderBrush="#FF080808" Foreground="#FF080808"/>
+        	<TextBlock HorizontalAlignment="Left" Margin="48,74,0,0" TextWrapping="Wrap" Text="Type" VerticalAlignment="Top" Foreground="#FF080808"/>
+        	<TextBlock x:Name="YearsText" HorizontalAlignment="Left" Margin="360,384,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF060606">
+        		<Run Text="10"/>
+        		<LineBreak/>
+        		<Run/>
+        	</TextBlock>
+
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

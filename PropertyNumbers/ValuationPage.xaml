@@ -1,0 +1,46 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="PropertyNumbers.ValuationPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28"/>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        	<Image HorizontalAlignment="Left" Height="744" Margin="10,-1,0,-20" VerticalAlignment="Top" Width="446" Source="iphone-bg-1a.png"/>
+        	<TextBlock Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,0,669" Foreground="#FF080808">
+        		<Run Text="Property Numbers - Valuation"/>
+        		<LineBreak/>
+        		<Run/>
+        	</TextBlock>
+        	<Button x:Name="CalculateButton" HorizontalAlignment="Left" Margin="166,620
+                    ,0,0" VerticalAlignment="Top" Foreground="#FF110404" Click="CalculateButton_Click" BorderBrush="{StaticResource TransparentBrush}">
+        		<Image Height="44" Source="CalcButton-1b.png" Stretch="Fill" Width="84"/>
+        	</Button>
+        	<TextBlock Style="{StaticResource PhoneTextNormalStyle}" Margin="30,154,336,515" Foreground="#FF080808" Text="Income:"/>
+        	<TextBlock Style="{StaticResource PhoneTextNormalStyle}" Margin="30,242,209,427" Foreground="#FF080808" Width="217" Text="Required Rate of Return"/>
+        	<TextBox x:Name="AmountTextBox" HorizontalAlignment="Left" Height="72" Margin="272,136,0,0" TextWrapping="Wrap" Text="10000" VerticalAlignment="Top" Width="167" Background="#BF535050" BorderBrush="#FF080808"/>
+        	<TextBox x:Name="RequiredRateTextBox" HorizontalAlignment="Left" Height="72" Margin="272,224,0,0" TextWrapping="Wrap" Text="6.5" VerticalAlignment="Top" Width="167" Background="#BF535050" BorderBrush="#FF080808" InputScope="Number"/>
+
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
